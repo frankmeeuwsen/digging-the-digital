@@ -44,7 +44,7 @@ function independent_publisher_footer_credits() {
 */
 
 function dtd_change_separator() {
-    return '//';
+    return '--';
 }
 add_filter( 'independent_publisher_entry_meta_separator', 'dtd_change_separator' );
 
