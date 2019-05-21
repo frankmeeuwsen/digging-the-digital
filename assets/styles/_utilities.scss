@@ -1,0 +1,157 @@
+// Breakpoints.
+$breakpoints: (
+	xxs: 384px,
+	xs: 501px,
+	sm: 768px,
+	md: 896px,
+	lg: 1152px,
+	xl: 1280px
+);
+
+// Colors.
+$black: #262626;
+$dark: #2a3139;
+$darker: #3f454c;
+$body: #4d5968;
+$medium: #90959f;
+$gray: #c6cace;
+$border: #eceef1;
+$light: #f6f8fa;
+$lighter: #fbfcfd;
+$white: #fff;
+$green: #54d169;
+$one: #00c6ff;
+$two: #0072ff;
+$blue: #1e90ff;
+$red: #ff6347;
+$accent: mix($one, $two);
+$overlay: rgba($dark, 0.5);
+
+// Typography.
+$font-family: "Nunito Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif;
+$font-serif: "Georgia", "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", "Times", "Source Serif Pro", serif;
+$font-mono: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+$normal: 400;
+$bolder: 600;
+$bold: 700;
+
+// Misc.
+$site-radius: 3px;
+$site-border: 1px solid $border;
+$site-outline: 2px solid $border;
+$site-shadow: 0 2rem 5rem -0.618rem rgba($dark, 0.0618);
+
+// Columns
+$margin: 2.564102564102564%;
+$one-half: 48.71794871794871%;
+$one-third: 31.62393162393162%;
+$one-fifth: 17.94871794871794%;
+$one-fourth: 23.07692307692307%;
+$one-sixth: 14.52991452991453%;
+$one-seventh: 12.08791208791208%;
+$one-eighth: 10.25641025641025%;
+$one-ninth: 8.831908831908832%;
+$two-thirds: 65.81196581196582%;
+$two-fourths: 48.71794871794871%;
+$two-fifths: 38.46153846153846%;
+$two-sixths: 31.62393162393162%;
+$three-fourths: 74.35897435897436%;
+$three-fifths: 58.97435897435897%;
+$three-sixths: 48.71794871794871%;
+$four-fifths: 79.48717948717948%;
+$four-sixths: 65.81196581196582%;
+$five-sixths: 82.90598290598291%;
+
+// Media queries.
+@mixin breakpoint( $breakpoint ) {
+
+	@if map-has-key($breakpoints, $breakpoint) {
+
+		@media (min-width: #{ map-get($breakpoints, $breakpoint) }) {
+
+			@content;
+		}
+
+	} @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
+
+		@media (min-width: $breakpoint) {
+
+			@content;
+		}
+
+	} @else {
+
+		@warn "No value could be retrieved from `#{$breakpoint}`. "
+			+ "Please make sure it is defined in `$breakpoints` map, or it is a valid number with supported unit of px, em or rem.";
+	}
+}
+
+// Clearfix.
+@mixin clearfix {
+	clear: both;
+
+	&:before,
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+
+// Flexfix.
+@mixin flexfix {
+
+	&:before,
+	&:after {
+		display: none;
+	}
+}
+
+// Screen reader text.
+@mixin screen-reader-text {
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	position: absolute !important;
+	width: 0.1rem;
+	height: 0.1rem;
+	border: 0;
+	background-color: $white;
+}
+
+// Transitions.
+@mixin transition {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+// Gradients.
+@mixin gradient {
+	background: $two;
+	background: -moz-linear-gradient(-45deg, $one 0%, $two 100%);
+	background: -webkit-linear-gradient(-45deg, $one 0%, $two 100%);
+	background: linear-gradient(135deg, $one 0%, $two 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr="$one", endcolorstr="$two", gradienttype=1);
+}
+
+// Overlays.
+@mixin overlay {
+
+	&:before {
+		display: block !important;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: $overlay;
+		content: "";
+		pointer-events: none;
+
+		@include transition;
+	}
+}

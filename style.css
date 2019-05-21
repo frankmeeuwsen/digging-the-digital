@@ -1,0 +1,133 @@
+/*
+Theme Name: Digging the digital
+Theme URI: https://diggingthedigital.com/
+Author: Frank Meeuwsen
+Author URI: https://diggingthedigital.com/
+Description: A child theme for the Independent Publisher theme.
+Template: independent-publisher
+Version: 1.0
+License: GNU GPLv3
+License URI: http://www.gnu.org/copyleft/gpl.html
+Tags: light, white, blue, two-columns, left-sidebar, flexible-width, custom-background, custom-colors, custom-menu, editor-style, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Based on _s http://underscores.me
+and Publish by Konstantin Kovshenin http://kovshenin.com/themes/publish
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+/* =Imports styles from the parent theme
+-------------------------------------------------------------- */
+@import url("../independent-publisher/style.css");
+/* =Theme customization starts here. Add your own custom styles. */
+nav.site-navigation:nth-child(2) {
+  display: none;
+}
+
+/* ## Site Containers
+--------------------------------------------- */
+/* ## Content Widths and Positions
+--------------------------------------------- */
+/* ## Avatars
+--------------------------------------------- */
+/* ## WordPress
+--------------------------------------------- */
+/* ## Gutenberg
+--------------------------------------------- */
+/* ## Site Header
+--------------------------------------------- */
+/* ## Title Area
+--------------------------------------------- */
+/* ## Menus
+--------------------------------------------- */
+/* ## Sub Menus
+--------------------------------------------- */
+/* ## Entries
+--------------------------------------------- */
+.single.post-cover-overlay-post-title .post-cover-title-image {
+  height: 35vh;
+}
+
+.akismet_comment_form_privacy_notice {
+  font-size: 0.8em;
+}
+
+.format-aside {
+  font-size: 0.9em;
+  line-height: 1.2;
+  color: #262626;
+  font-weight: 100;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-style: normal;
+}
+
+.format-aside .entry-content::before {
+  content: "\f130";
+  font-family: "Dashicons";
+  float: left;
+  color: #54d169;
+  font-size: 1.2em;
+  padding: 13px 10px;
+}
+
+.format-aside .entry-meta {
+  display: none;
+}
+
+.response {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 5px;
+  font-size: 16px;
+  border-bottom: 0px;
+}
+
+.response blockquote {
+  margin-left: 25px;
+  background-color: #c6cace;
+}
+
+.response svg {
+  width: 24px;
+  height: 24px;
+  color: #54d169;
+}
+
+/* ## Sidebars
+--------------------------------------------- */
+/* ## Widgets
+--------------------------------------------- */
+/* ## Site Footer
+--------------------------------------------- */
+/* ## Footer Widgets
+--------------------------------------------- */
+/* ## Footer Credits
+--------------------------------------------- */
+/* ## Front Page
+--------------------------------------------- */
+.dtd-date {
+  font-size: 1.5em;
+  font-family: "Nunito Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif;
+  margin-left: 0em;
+  margin-top: 1em;
+}
+
+@media (min-width: 501px) {
+  .dtd-date {
+    margin-left: -1em;
+  }
+}
+
+.blog article.show-full-content-first-post {
+  padding-top: 0;
+}
+
+.blog article, .archive article, .search article {
+  padding: 20px 0;
+  border-bottom: solid 1px #ddd;
+}
+
+/*# sourceMappingURL=style.css.map */

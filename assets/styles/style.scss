@@ -1,0 +1,37 @@
+/*
+Theme Name: Digging the digital
+Theme URI: https://diggingthedigital.com/
+Author: Frank Meeuwsen
+Author URI: https://diggingthedigital.com/
+Description: A child theme for the Independent Publisher theme.
+Template: independent-publisher
+Version: 1.0
+License: GNU GPLv3
+License URI: http://www.gnu.org/copyleft/gpl.html
+Tags: light, white, blue, two-columns, left-sidebar, flexible-width, custom-background, custom-colors, custom-menu, editor-style, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Based on _s http://underscores.me
+and Publish by Konstantin Kovshenin http://kovshenin.com/themes/publish
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/* =Imports styles from the parent theme
+-------------------------------------------------------------- */
+@import url('../independent-publisher/style.css');
+
+/* =Theme customization starts here. Add your own custom styles. */
+
+@import "utilities";
+@import "defaults";
+@import "layout";
+@import "common";
+@import "header";
+@import "menus";
+@import "content";
+@import "sidebars";
+@import "footer";
+@import "home";

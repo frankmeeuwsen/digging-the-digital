@@ -1,0 +1,51 @@
+/* ## Entries
+--------------------------------------------- */
+.single.post-cover-overlay-post-title .post-cover-title-image {
+	height: 35vh;
+}
+
+.akismet_comment_form_privacy_notice {
+	font-size: 0.8em;
+}
+
+.format-aside {
+	font-size: 0.9em;
+	line-height: 1.2;
+	color: $black;
+	font-weight: 100;
+	/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+	font-style: normal;
+}
+.format-aside .entry-content::before{
+	content: "\f130";
+	font-family: "Dashicons";
+	float:left;
+	color: $green;
+	font-size: 1.2em;
+	padding:13px 10px;
+
+}
+
+.format-aside .entry-meta{
+	display: none;
+}
+
+.response {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 0px;
+    padding: 5px;
+    font-size: 16px;
+    border-bottom: 0px;
+}
+
+.response blockquote {
+    margin-left: 0px;
+    background-color: $gray;
+}
+
+.response svg {
+    width: 24px;
+    height: 24px;
+    color: $green;
+}
