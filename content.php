@@ -13,9 +13,11 @@
 		 * we're on the home page AND this is not a sticky post
 		 */
 		?>
+
 		<h1 class="entry-title p-name">
 			<a href="<?php the_permalink(); ?>" title="<?php echo independent_publisher_post_link_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
 		</h1>
+
 	</header>
 	<!-- .entry-header -->
 

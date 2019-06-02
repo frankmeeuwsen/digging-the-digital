@@ -79,14 +79,14 @@ nav.site-navigation:nth-child(2) {
 .response {
   margin-bottom: 10px;
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 0px;
   padding: 5px;
   font-size: 16px;
   border-bottom: 0px;
 }
 
 .response blockquote {
-  margin-left: 25px;
+  margin-left: 0px;
   background-color: #c6cace;
 }
 
@@ -115,12 +115,6 @@ nav.site-navigation:nth-child(2) {
   margin-top: 1em;
 }
 
-@media (min-width: 501px) {
-  .dtd-date {
-    margin-left: -1em;
-  }
-}
-
 .blog article.show-full-content-first-post {
   padding-top: 0;
 }
@@ -128,6 +122,16 @@ nav.site-navigation:nth-child(2) {
 .blog article, .archive article, .search article {
   padding: 20px 0;
   border-bottom: solid 1px #ddd;
+}
+
+.format-link .entry-title a:after {
+  font-family: "Genericons";
+  content: '';
+  font-size: 24px;
+  height: 24px;
+  position: relative;
+  top: 0;
+  width: 24px;
 }
 
 /*# sourceMappingURL=style.css.map */

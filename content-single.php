@@ -82,6 +82,8 @@
 	<footer class="entry-meta">
 		<?php do_action( 'independent_publisher_entry_meta_top' ); ?>
 
+		<?php independent_publisher_show_related_tags(); ?>
+
 		<?php if ( comments_open() && !independent_publisher_hide_comments() ) : ?>
 			<div id="share-comment-button">
 				<button>
