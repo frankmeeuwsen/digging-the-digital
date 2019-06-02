@@ -68,3 +68,4 @@ library/vendors/composer
 assets/img/.DS_Store
 wpgulp.config.js
 gulpfile.babel.js
+node_modules
