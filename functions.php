@@ -89,3 +89,10 @@ function aperture_endpoint() {
   echo '<link rel="microsub" href="https://aperture.p3k.io/microsub/146">' . "\n";
 }
 add_action('wp_head', 'aperture_endpoint');
+
+// Add extra feeds in feed discovery 
+function kindfeed_discovery() {
+	echo '<link rel="alternate" type="application/atom+xml" title="Digging the Digital » Bookmarks feed" href="https://diggingthedigital.com/kind/bookmark/feed/">' . "\n";
+	echo '<link rel="alternate" type="application/atom+xml" title="Digging the Digital » Likes feed" href="https://diggingthedigital.com/kind/like/feed/">' . "\n";
+  }
+  add_action('wp_head', 'kindfeed_discovery');
