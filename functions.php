@@ -89,34 +89,3 @@ function aperture_endpoint() {
   echo '<link rel="microsub" href="https://aperture.p3k.io/microsub/146">' . "\n";
 }
 add_action('wp_head', 'aperture_endpoint');
-
-// Add extra feeds in feed discovery 
-function kindfeed_discovery() {
-	echo '<link rel="alternate" type="application/atom+xml" title="Digging the Digital » Bookmarks feed" href="https://diggingthedigital.com/kind/bookmark/feed/">' . "\n";
-	echo '<link rel="alternate" type="application/atom+xml" title="Digging the Digital » Likes feed" href="https://diggingthedigital.com/kind/like/feed/">' . "\n";
-  }
-  add_action('wp_head', 'kindfeed_discovery');
-
-//   remove h-entry from body and add it to the post class somehow
-add_filter( 'body_class', 'remove_hentry', 100, 2 );
-
-function remove_hentry( $wp_classes, $extra_classes ) {
-
-    # List tag to delete
-    $class_delete = array('h-entry', 'hentry');
-
-    # Verify if exist the class of WP in $class_delete
-    foreach ($wp_classes as $class_css_key => $class_css) {
-        if (in_array($class_css, $class_delete)) {
-            unset($wp_classes[$class_css_key]);
-        }
-    }
-
-    // Add the extra classes back untouched
-    return array_merge( $wp_classes, (array) $extra_classes );
-}
-
-// Add specific CSS class by body.
-add_filter( 'post_class', function( $classes ) {
-    return array_merge( $classes, array('h-entry') );
-} );
