@@ -120,11 +120,3 @@ function remove_hentry( $wp_classes, $extra_classes ) {
 add_filter( 'post_class', function( $classes ) {
     return array_merge( $classes, array('h-entry') );
 } );
-
-// Remove invisible author card below single posts
-// remove_action( 'the_content', 'independent_publisher_before_post_author_bottom_card' );
-do_action('independent_publisher_after_post_author_bottom_card');
-function independent_publisher_after_post_author_bottom_card(){
-	return;
-}
-
