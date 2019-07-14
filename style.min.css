@@ -7,6 +7,9 @@
 .response{margin-bottom:10px;margin-top:10px;margin-left:0;padding:5px;font-size:16px;border-bottom:0}
 .response blockquote{margin-left:0;background-color:#c6cace}
 .response svg{width:24px;height:24px;color:#54d169}
+.open-subscription{padding-top:8px;clear:both;line-height:1.4em;background-color:#fbfbfb;border:#e1e8ed solid 1px;border-radius:4px;padding:20px;margin-bottom:50px}
+.open-nieuwsbrief-uitleg{font-family:"Nunito Sans",-apple-system,blinkmacsystemfont,"Segoe UI",roboto,helvetica,arial,sans-serif;font-size:14px}
+.revue-embed{margin-bottom:1em;margin-top:2em;max-width:520px;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .dtd-date{font-size:1.5em;font-family:"Nunito Sans",-apple-system,blinkmacsystemfont,"Segoe UI",roboto,helvetica,arial,sans-serif;margin-left:0;margin-top:1em}
 .blog article.show-full-content-first-post{padding-top:0}
 .blog article,.archive article,.search article{padding:20px 0;border-bottom:solid 1px #ddd}

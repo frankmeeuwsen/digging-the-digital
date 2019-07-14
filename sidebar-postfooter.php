@@ -9,7 +9,7 @@
         $postfooter_sidebars = array( 'postfooter' );
         foreach ( $postfooter_sidebars as $key => $postfooter_sidebar ){
             if ( is_active_sidebar( $postfooter_sidebar ) ) {
-                echo '<div class="postfooter-widget' . (  2 == $key ? ' last' : '' ) . '">';
+                echo '<div class="open-subscription' . (  2 == $key ? ' last' : '' ) . '">';
                 dynamic_sidebar( $postfooter_sidebar );
                 echo '</div> <!-- end .postfooter-widget -->';
             }

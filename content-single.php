@@ -76,7 +76,6 @@
 		<?php endif; ?>
 	</div>
 	<!-- .entry-content -->
-
 	<?php get_sidebar('postfooter'); ?>
 
 	<footer class="entry-meta">
