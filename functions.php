@@ -89,3 +89,14 @@ function aperture_endpoint() {
   echo '<link rel="microsub" href="https://aperture.p3k.io/microsub/146">' . "\n";
 }
 add_action('wp_head', 'aperture_endpoint');
+
+// Add newsletter subscription below blogposts
+
+register_sidebar( array(
+	'name'          => 'Post Footer',
+	'id'            => 'postfooter',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div> <!-- end .widget -->',
+	'before_title'  => '<h2 class="widget-title">',
+	'after_title'   => '</h2>',
+) );

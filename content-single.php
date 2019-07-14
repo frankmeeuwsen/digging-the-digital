@@ -77,6 +77,7 @@
 	</div>
 	<!-- .entry-content -->
 
+	<?php get_sidebar('postfooter'); ?>
 
 	<footer class="entry-meta">
 		<?php do_action( 'independent_publisher_entry_meta_top' ); ?>
