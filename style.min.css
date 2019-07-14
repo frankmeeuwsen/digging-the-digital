@@ -8,8 +8,10 @@
 .response blockquote{margin-left:0;background-color:#c6cace}
 .response svg{width:24px;height:24px;color:#54d169}
 .open-subscription{padding-top:8px;clear:both;line-height:1.4em;background-color:#fbfbfb;border:#e1e8ed solid 1px;border-radius:4px;padding:20px;margin-bottom:50px}
-.open-nieuwsbrief-uitleg{font-family:"Nunito Sans",-apple-system,blinkmacsystemfont,"Segoe UI",roboto,helvetica,arial,sans-serif;font-size:14px}
-.revue-embed{margin-bottom:1em;margin-top:2em;max-width:520px;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.open-nieuwsbrief-uitleg,.revue-form-field{font-family:"Nunito Sans",-apple-system,blinkmacsystemfont,"Segoe UI",roboto,helvetica,arial,sans-serif;font-size:14px}
+#revue-embed{margin:20px 0;max-width:520px;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.revue-form-group{margin:20px 0}
+.widget-title::before{content:"";display:inline-block;background-image:url("/wp-content/uploads/open.png");background-size:100%;width:16px;height:16px;padding:5px;margin-right:6px;background-repeat:no-repeat}
 .dtd-date{font-size:1.5em;font-family:"Nunito Sans",-apple-system,blinkmacsystemfont,"Segoe UI",roboto,helvetica,arial,sans-serif;margin-left:0;margin-top:1em}
 .blog article.show-full-content-first-post{padding-top:0}
 .blog article,.archive article,.search article{padding:20px 0;border-bottom:solid 1px #ddd}

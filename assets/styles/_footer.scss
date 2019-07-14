@@ -16,19 +16,32 @@
     margin-bottom: 50px;
 }
 
-.open-nieuwsbrief-uitleg{
+.open-nieuwsbrief-uitleg,
+.revue-form-field{
     font-family: $font-family;
     font-size: 14px;
 }
 
-.revue-embed{
-    margin-bottom: 1em;
-    margin-top: 2em;
+#revue-embed{
+    margin: 20px 0px;
     max-width: 520px;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
+}
+
+.revue-form-group {
+    margin: 20px 0px;
+}
+
+.widget-title::before {
+    content: "";
+    display: inline-block;
+    background-image: url('/wp-content/uploads/open.png');
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+    padding: 5px;
+    margin-right: 6px;
+    background-repeat: no-repeat;
 }
 /* ## Footer Credits
 --------------------------------------------- */
