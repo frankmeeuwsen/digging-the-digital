@@ -1,4 +1,0 @@
-[03-Apr-2019 09:43:00 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/digging/public_html/wp-content/themes/digging-the-digital/index.php:15
-Stack trace:
-#0 {main}
-  thrown in /home/digging/public_html/wp-content/themes/digging-the-digital/index.php on line 15
