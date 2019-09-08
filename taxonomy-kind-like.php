@@ -102,19 +102,7 @@ get_header(); ?>
 						}
 					} elseif ( is_day() || is_month() || is_year() ) {
 						echo independent_publisher_date_archive_description();
-					} else {
-						// Show the Post Kind stuff
-						$kind_description = description();
-
-						// Get some stats about this taxonomy to include in the description
-						$taxonomy_stats = apply_filters( 'independent_publisher_taxonomy_tag_stats', independent_publisher_taxonomy_archive_stats( 'post_tag' ) );
-
-						if ( !empty( $kind_description ) ) { // show the description + the taxonomy stats
-							echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $kind_description . $taxonomy_stats . '</div>' );
-						} else { // there was description set, so let's just show some stats
-							echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $taxonomy_stats . '</div>' );
-						}
-
+					}
 					?>
 					<?php independent_publisher_content_nav( 'nav-above' ); ?>
 				</header><!-- .page-header -->
