@@ -100,3 +100,14 @@ register_sidebar( array(
 	'before_title'  => '<h2 class="widget-title">',
 	'after_title'   => '</h2>',
 ) );
+
+		/**
+		 * Enable Post Thumbnails
+		 */
+		add_theme_support( 'post-thumbnails' );
+
+		/*
+		 * Add custom thumbnail size for use with featured images
+		 */
+
+		add_image_size( 'independent_publisher_post_thumbnail', 200, 200 );
