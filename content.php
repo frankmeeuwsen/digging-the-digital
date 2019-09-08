@@ -29,7 +29,7 @@
 
 				<?php /* Only show featured image for Standard post and gallery post formats */ ?>
 				<?php if ( has_post_thumbnail() && in_array( get_post_format(), array( 'gallery', false ) ) ) : ?>
-					<a href="<?php the_permalink(); ?>" title="<?php echo independent_publisher_post_thumbnail_link_title(); ?>"><?php the_post_thumbnail( 'independent_publisher_post_thumbnail' ); ?></a>
+					<a href="<?php the_permalink(); ?>" title="<?php echo independent_publisher_post_thumbnail_link_title(); ?>"><?php the_post_thumbnail( 'independent_publisher_post_frontpage' ); ?></a>
 				<?php endif; ?>
 
 			<?php endif; ?>
