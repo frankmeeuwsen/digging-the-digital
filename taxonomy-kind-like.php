@@ -64,7 +64,7 @@ get_header(); ?>
 							_e( 'Audios', 'independent-publisher' );
 						} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
 							_e( 'Chats', 'independent-publisher' );
-						} elseif ( is_tax( 'post_format', 'kind-like' ) ) {
+						} elseif ( is_tax( 'kind', 'like' ) ) {
 							_e( 'Likes', 'independent-publisher' );
 						} else {
 							_e( 'Archives', 'independent-publisher' );
