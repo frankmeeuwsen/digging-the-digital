@@ -66,6 +66,12 @@ get_header(); ?>
 							_e( 'Chats', 'independent-publisher' );
 						} elseif ( is_tax( 'kind', 'like' ) ) {
 							_e( 'Likes', 'independent-publisher' );
+						} elseif ( is_tax( 'kind', 'note' ) ) {
+							_e( 'Notes', 'independent-publisher' );
+						} elseif ( is_tax( 'kind', 'photo' ) ) {
+							_e( 'Photos', 'independent-publisher' );
+						} elseif ( is_tax( 'kind', 'reply' ) ) {
+							_e( 'Replies', 'independent-publisher' );
 						} elseif ( is_tax( 'kind', 'repost' ) ) {
 							_e( 'Reposts', 'independent-publisher' );
 						} elseif ( is_tax( 'kind', 'bookmark' ) ) {
