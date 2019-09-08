@@ -110,4 +110,4 @@ register_sidebar( array(
 		 * Add custom thumbnail size for use with featured images
 		 */
 
-		add_image_size( 'independent_publisher_post_thumbnail', 200, 200 );
+		add_image_size( 'independent_publisher_post_frontpage', 200, 200 );
