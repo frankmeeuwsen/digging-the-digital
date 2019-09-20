@@ -26,11 +26,9 @@ add_action('wp_head', 'blog_favicon');
  * last modified time of the file. This helps when making frequent changes to the
  * CSS file as the browser will always load the newest version.
  */
-/*
 function independent_publisher_stylesheet() {
 	wp_enqueue_style( 'independent-publisher-style', get_stylesheet_uri(), '', filemtime( get_stylesheet_directory() . '/style.css') );
 }
-*/
 
 /*
  * Modifies the default theme footer.
