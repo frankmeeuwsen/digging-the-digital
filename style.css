@@ -23,8 +23,7 @@ and Blueprint http://www.blueprintcss.org/
 @import url("../independent-publisher/style.css");
 /* =Theme customization starts here. Add your own custom styles. */
 nav.site-navigation:nth-child(2) {
-  display: none;
-}
+  display: none; }
 
 /* ## Site Containers
 --------------------------------------------- */
@@ -47,21 +46,18 @@ nav.site-navigation:nth-child(2) {
 /* ## Entries
 --------------------------------------------- */
 .single.post-cover-overlay-post-title .post-cover-title-image {
-  height: 35vh;
-}
+  height: 35vh; }
 
 .akismet_comment_form_privacy_notice {
-  font-size: 0.8em;
-}
+  font-size: 0.8em; }
 
 .format-aside {
   font-size: 0.9em;
   line-height: 1.2;
-  color: #54d169;
+  color: #262626;
   font-weight: 100;
   /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-  font-style: normal;
-}
+  font-style: normal; }
 
 .format-aside .entry-content::before {
   content: "\f130";
@@ -69,12 +65,10 @@ nav.site-navigation:nth-child(2) {
   float: left;
   color: #54d169;
   font-size: 1.2em;
-  padding: 13px 10px;
-}
+  padding: 13px 10px; }
 
 .format-aside .entry-meta {
-  display: none;
-}
+  display: none; }
 
 .response {
   margin-bottom: 10px;
@@ -82,19 +76,16 @@ nav.site-navigation:nth-child(2) {
   margin-left: 0px;
   padding: 5px;
   font-size: 16px;
-  border-bottom: 0px;
-}
+  border-bottom: 0px; }
 
 .response blockquote {
   margin-left: 0px;
-  background-color: #c6cace;
-}
+  background-color: #c6cace; }
 
 .response svg {
   width: 24px;
   height: 24px;
-  color: #54d169;
-}
+  color: #54d169; }
 
 /* ## Sidebars
 --------------------------------------------- */
@@ -112,24 +103,20 @@ nav.site-navigation:nth-child(2) {
   border: #e1e8ed solid 1px;
   border-radius: 4px;
   padding: 20px;
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px; }
 
 .open-nieuwsbrief-uitleg,
 .revue-form-field {
   font-family: "Nunito Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif;
-  font-size: 14px;
-}
+  font-size: 14px; }
 
 #revue-embed {
   margin: 20px 0px;
   max-width: 520px;
-  justify-content: space-between;
-}
+  justify-content: space-between; }
 
 .revue-form-group {
-  margin: 20px 0px;
-}
+  margin: 20px 0px; }
 
 .widget-title::before {
   content: "";
@@ -140,8 +127,7 @@ nav.site-navigation:nth-child(2) {
   height: 16px;
   padding: 5px;
   margin-right: 6px;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
 
 /* ## Footer Credits
 --------------------------------------------- */
@@ -151,17 +137,14 @@ nav.site-navigation:nth-child(2) {
   font-size: 1.5em;
   font-family: "Nunito Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif;
   margin-left: 0em;
-  margin-top: 1em;
-}
+  margin-top: 1em; }
 
 .blog article.show-full-content-first-post {
-  padding-top: 0;
-}
+  padding-top: 0; }
 
 .blog article, .archive article, .search article {
   padding: 20px 0;
-  border-bottom: solid 1px #ddd;
-}
+  border-bottom: solid 1px #ddd; }
 
 .format-link .entry-title a:after {
   font-family: "Genericons";
@@ -170,11 +153,9 @@ nav.site-navigation:nth-child(2) {
   height: 24px;
   position: relative;
   top: 0;
-  width: 24px;
-}
+  width: 24px; }
 
 .kind-photo .entry-content img {
-  max-width: 50%;
-}
+  max-width: 50%; }
 
 /*# sourceMappingURL=style.css.map */

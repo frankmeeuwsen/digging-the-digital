@@ -33,8 +33,14 @@
 				<?php endif; ?>
 
 			<?php endif; ?>
-
-			<?php the_excerpt(); ?>
+			
+			<?php if (is_tax( 'kind', 'note' )){
+				echo the_content();
+			}else {
+				echo the_excerpt();
+			}
+			?>			
+			
 
 		<?php else : ?>
 
