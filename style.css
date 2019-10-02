@@ -87,6 +87,9 @@ nav.site-navigation:nth-child(2) {
   height: 24px;
   color: #54d169; }
 
+.format-aside .entry-content a {
+  color: #54d169; }
+
 /* ## Sidebars
 --------------------------------------------- */
 /* ## Widgets
