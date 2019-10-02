@@ -119,12 +119,12 @@ function improved_trim_excerpt($text) {
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 		$text = strip_tags($text, '<p>, <a>');
 		// $excerpt_length = 80;
-		$words = explode(' ', $text, $excerpt_length + 1);
-		if (count($words)> $excerpt_length) {
-			array_pop($words);
-			array_push($words, '[...]');
-			$text = implode(' ', $words);
-		}
+		// $words = explode(' ', $text, $excerpt_length + 1);
+		// if (count($words)> $excerpt_length) {
+		// 	array_pop($words);
+		// 	array_push($words, '[...]');
+		// 	$text = implode(' ', $words);
+		// }
 	}
 	return $text;
 }
