@@ -150,3 +150,7 @@ add_theme_support( 'post-thumbnails' );
 	*/
 
 add_image_size( 'indieweb_publisher_post_frontpage', 200, 200 );
+
+// function indieweb_publisher_continue_reading_text($content) {
+// 	return $content = $content.'Continue reading <span class="meta-nav">&rarr;</span>';
+// }

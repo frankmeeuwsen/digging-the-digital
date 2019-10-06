@@ -20,7 +20,18 @@
 				<a href="<?php the_permalink(); ?>" title="<?php echo indieweb_publisher_post_thumbnail_link_title(); ?>"><?php the_post_thumbnail( 'indieweb_publisher_post_thumbnail' ); ?></a>
 			<?php endif; ?>
 
-			<?php the_content( indieweb_publisher_continue_reading_text() ); ?>
+
+			<?php 
+			if ( ( !get_post_format() || 'chat' === get_post_format() ) ) {
+				the_excerpt(indieweb_publisher_continue_reading_text());
+			} else {
+				the_content();
+
+			};
+			?>
+
+			
+			
 			<?php if ( function_exists( 'wp_pagenavi' ) ) : // WP-PageNavi support ?>
 
 				<?php wp_pagenavi( array( 'type' => 'multipart' ) ); ?>
@@ -51,15 +62,15 @@
 		<?php
 		/* Show post date when show post date option enabled */
 		?>
-<?php 
-		if ( indieweb_publisher_option( 'show_date_entry_meta' ) ) {
-			echo indieweb_publisher_get_post_date(); 
-		} else if ( empty( $title ) ) {
-			printf( '<a class="u-url permalink" href="%1$s" title="%2$s" rel="bookmark"></a>', get_the_permalink(), indieweb_publisher_post_link_title(), $title );
-		}
-		?>
 
 		<?php $separator = apply_filters( 'indieweb_publisher_entry_meta_separator', '|' ); ?>
+
+		<?php 
+		if ( indieweb_publisher_option( 'show_date_entry_meta' ) ) {
+			echo indieweb_publisher_get_post_date(); 
+		} 
+		?>
+
 
 		<?php /* Show webmentions link only when post is not password-protected AND pings open AND there are mentions on this post */ ?>
 		<?php if ( ! post_password_required() && pings_open() && indieweb_publisher_comment_count_mentions() ) : ?>
