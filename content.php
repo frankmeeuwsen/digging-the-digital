@@ -20,9 +20,20 @@
 				<a href="<?php the_permalink(); ?>" title="<?php echo indieweb_publisher_post_thumbnail_link_title(); ?>"><?php the_post_thumbnail( 'indieweb_publisher_post_thumbnail' ); ?></a>
 			<?php endif; ?>
 
+			<?php $terms = get_the_terms( $post->ID, 'kind'); 
+
+				if ( $terms && ! is_wp_error( $terms ) ) : 
+			    $kind_links = array();
+ 				foreach ( $terms as $term ) {
+        			$kind_links[] = $term->name;
+				}
+			    $myKind = join( ", ", $kind_links );
+			?>
+			<?php endif; ?>
+
 
 			<?php 
-			if ( ( !get_post_format() || 'chat' === get_post_format() ) ) {
+			if ( ( $myKind !== 'Note' ) ) {
 				the_excerpt(indieweb_publisher_continue_reading_text());
 			} else {
 				the_content();
@@ -30,8 +41,6 @@
 			};
 			?>
 
-			
-			
 			<?php if ( function_exists( 'wp_pagenavi' ) ) : // WP-PageNavi support ?>
 
 				<?php wp_pagenavi( array( 'type' => 'multipart' ) ); ?>

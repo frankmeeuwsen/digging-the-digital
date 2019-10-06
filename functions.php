@@ -31,26 +31,14 @@ function dtd_publisher_stylesheet() {
 }
 
 
-// LATER NOG UITZOEKEN
-// add_action( 'after_setup_theme', 'dtd_publisher_setup' );
-if ( ! function_exists( 'dtd_publisher_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which runs
-	 * before the init hook. The init hook is too late for some features, such as indicating
-	 * support post thumbnails.
-	 *
-	 * @since Indieweb Publisher 1.0
-	 */
-	function dtd_publisher_setup() {
+/**
+ * Custom template tags for this theme.
+ */
 
-		/**
-		 * Custom template tags for this theme.
-		 */
-		require get_template_directory() . '/inc/template-tags.php';
-	}
-endif; // dtd_publisher_setup
+// function dtd_publisher_setup() {
+// 	require get_template_directory() . '/inc/template-tags.php';
+// }
+
 
 
 //  Loads the parent stylesheet from indieweb publisher and overrides the one in the parent theme
