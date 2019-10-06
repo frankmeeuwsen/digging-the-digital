@@ -100,8 +100,8 @@ function indieweb_publisher_posted_on_date() {
 }
 
 // set the default feed to atom
-add_filter('default_feed','atom_default_feed');
-function atom_default_feed() { return 'atom'; }
+// add_filter('default_feed','atom_default_feed');
+// function atom_default_feed() { return 'atom'; }
 
 // remove the rdf and rss 0.92 feeds (nobody ever needs these)
 remove_action( 'do_feed_rdf', 'do_feed_rdf', 10, 1 );
@@ -142,3 +142,17 @@ add_image_size( 'indieweb_publisher_post_frontpage', 200, 200 );
 // function indieweb_publisher_continue_reading_text($content) {
 // 	return $content = $content.'Continue reading <span class="meta-nav">&rarr;</span>';
 // }
+
+// function dtd_rssclub($content) {
+// 	global $wp_query;
+// 	$postid = $wp_query->post->ID;
+// 	if(is_feed() && has_category('kinds', $postid) ) {
+// 		$content = '<div>Dit is een geheim bericht voor iedereen. </div><br /><br />';
+// 		}
+// 	else {
+// 	$content = $content;	
+// 	}
+// 	return $content;
+// 	}
+// 	add_filter('the_excerpt_rss', 'dtd_rssclub');
+// 	add_filter('the_content_rss', 'dtd_rssclub');
