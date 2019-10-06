@@ -54,3 +54,16 @@
 .format-aside .entry-content a {
 	color: $green;
 }
+
+.share-comment-icon::before {
+	display: inline-block;
+	padding-right: 8px;
+	margin-top: -2px;
+	font-style: normal;
+	font-family: 'Dashicons';
+	font-size: 20px;
+	vertical-align: top;
+	-webkit-font-smoothing: antialiased;
+	content: '\f464';
+	color: white;
+}
