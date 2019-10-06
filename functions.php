@@ -67,6 +67,11 @@ function indieweb_publisher_stylesheet() {
     );
 }
 
+function ww_load_dashicons(){
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'ww_load_dashicons', 999);
+
 /*
  * Modifies the default theme footer.
  * This also applies the changes to JetPack's Infinite Scroll footer, if you're using that module.
