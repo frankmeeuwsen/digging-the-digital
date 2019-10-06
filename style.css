@@ -59,16 +59,13 @@ nav.site-navigation:nth-child(2) {
   /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   font-style: normal; }
 
-.format-aside .entry-content::before {
+.format-aside::before {
   content: "\f130";
   font-family: "Dashicons";
   float: left;
   color: #54d169;
   font-size: 1.2em;
-  padding: 13px 10px; }
-
-.format-aside .entry-meta {
-  display: none; }
+  padding: 0 10px 20px 10px; }
 
 .response {
   margin-bottom: 10px;
