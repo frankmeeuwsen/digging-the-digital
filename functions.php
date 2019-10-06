@@ -25,41 +25,77 @@ add_action('wp_head', 'blog_favicon');
  * Add version number to main style.css file with version number that matches the
  * last modified time of the file. This helps when making frequent changes to the
  * CSS file as the browser will always load the newest version.
- */
-function independent_publisher_stylesheet() {
-	wp_enqueue_style( 'independent-publisher-style', get_stylesheet_uri(), '', filemtime( get_stylesheet_directory() . '/style.css') );
+ */ 
+function dtd_publisher_stylesheet() {
+	wp_enqueue_style( 'dtd-style', get_stylesheet_uri(), '', filemtime( get_stylesheet_directory() . '/style.css') );
+}
+
+
+// LATER NOG UITZOEKEN
+// add_action( 'after_setup_theme', 'dtd_publisher_setup' );
+if ( ! function_exists( 'dtd_publisher_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which runs
+	 * before the init hook. The init hook is too late for some features, such as indicating
+	 * support post thumbnails.
+	 *
+	 * @since Indieweb Publisher 1.0
+	 */
+	function dtd_publisher_setup() {
+
+		/**
+		 * Custom template tags for this theme.
+		 */
+		require get_template_directory() . '/inc/template-tags.php';
+	}
+endif; // dtd_publisher_setup
+
+
+
+add_action( 'wp_enqueue_scripts', 'dtd_enqueue_styles' );
+function dtd_enqueue_styles() {
+    // wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+	$parent_style = 'parent-style'; 
+ 
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        array( $parent_style ),
+        wp_get_theme()->get('Version')
+    );
 }
 
 /*
  * Modifies the default theme footer.
  * This also applies the changes to JetPack's Infinite Scroll footer, if you're using that module.
  */
-/*
-function independent_publisher_footer_credits() {
-	$my_custom_footer = 'This is my custom footer.';
+
+function indieweb_publisher_footer_credits() {
+	$my_custom_footer = 'Made with ❤️ in Utrecht, based on the <a href="https://github.com/dshanske/indieweb-publisher">Indieweb Publisher theme</a> ';
 	return $my_custom_footer;
 }
-*/
 
 function dtd_change_separator() {
     return '//';
 }
-add_filter( 'independent_publisher_entry_meta_separator', 'dtd_change_separator' );
+add_filter( 'indieweb_publisher_entry_meta_separator', 'dtd_change_separator' );
 
-function independent_publisher_maybe_linkify_the_content( $content ) {
+function indieweb_publisher_maybe_linkify_the_content( $content ) {
 	if ( ! is_single() && ( 'aside' === get_post_format() || 'quote' === get_post_format() ) ) {
 
 		// Asides and Quotes might have footnotes with anchor tags, or just anchor tags, both of which would screw things up when linking the content to itself (anchors cannot have anchors inside them), so let's clean things up
-		$content = independent_publisher_clean_content( $content );
+		$content = indieweb_publisher_clean_content( $content );
 
 		// Now we can link the Quote or Aside content to itself
-		// $content = '<a href="' . get_permalink() . '" rel="bookmark" title="' . independent_publisher_post_link_title() . '">' . $content . '</a>';
+		// $content = '<a href="' . get_permalink() . '" rel="bookmark" title="' . indieweb_publisher_post_link_title() . '">' . $content . '</a>';
 	}
 
 	return $content;
 }
 
-function independent_publisher_posted_on_date() {
+function indieweb_publisher_posted_on_date() {
 	printf(
 		'<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date dt-published" datetime="%3$s" itemprop="datePublished" pubdate="pubdate">%5$s %4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -108,26 +144,4 @@ add_theme_support( 'post-thumbnails' );
 	* Add custom thumbnail size for use with featured images
 	*/
 
-add_image_size( 'independent_publisher_post_frontpage', 200, 200 );
-
-function improved_trim_excerpt($text) {
-	global $post;
-	if ( '' == $text ) {
-		$text = get_the_content('');
-		$text = apply_filters('the_content', $text);
-		$text = str_replace('\]\]\>', ']]&gt;', $text);
-		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-		// $text = strip_tags($text, '<a>');
-		// $excerpt_length = 80;
-		// $words = explode(' ', $text, $excerpt_length + 1);
-		// if (count($words)> $excerpt_length) {
-		// 	array_pop($words);
-		// 	array_push($words, '[...]');
-		// 	$text = implode(' ', $words);
-		// }
-	}
-	return $text;
-}
-
-// remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-// add_filter('get_the_excerpt', 'improved_trim_excerpt');
+add_image_size( 'indieweb_publisher_post_frontpage', 200, 200 );
