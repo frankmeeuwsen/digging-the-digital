@@ -53,13 +53,13 @@ if ( ! function_exists( 'dtd_publisher_setup' ) ) :
 endif; // dtd_publisher_setup
 
 
-
-add_action( 'wp_enqueue_scripts', 'dtd_enqueue_styles' );
-function dtd_enqueue_styles() {
-    // wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+//  Loads the parent stylesheet from indieweb publisher and overrides the one in the parent theme
+add_action( 'wp_enqueue_scripts', 'indieweb_publisher_stylesheet' );
+function indieweb_publisher_stylesheet() {
 	$parent_style = 'parent-style'; 
- 
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( $parent_style, 
+		get_template_directory_uri() . '/css/default.min.css',
+		wp_get_theme()->get('Version'));
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css',
         array( $parent_style ),
