@@ -7,7 +7,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header>
 		<?php
-		$title = indieweb_publisher_get_the_title();
+			// $title = indieweb_publisher_get_the_title();
+			$title = get_the_title();
 		if ( ! empty( $title ) ) {
 		?>
 			<h1 class="entry-title p-name">
@@ -20,22 +21,11 @@
 				<a href="<?php the_permalink(); ?>" title="<?php echo indieweb_publisher_post_thumbnail_link_title(); ?>"><?php the_post_thumbnail( 'indieweb_publisher_post_thumbnail' ); ?></a>
 			<?php endif; ?>
 			<!-- Show ARTICLES as excerpt and the rest as full content.  -->
-			<?php $terms = get_the_terms( $post->ID, 'kind'); 
-
-				if ( $terms && ! is_wp_error( $terms ) ) : 
-			    	$kind_links = array();
- 					foreach ( $terms as $term ) {
-        				$kind_links[] = $term->name;
-					}
-					$myKind = join( ", ", $kind_links );
-				endif;
-			?>
-
 			<?php 
-			if ( ( $myKind !== 'Article' || $myKind == '') ) {
-				the_content();
-			} else {
+			if ( has_post_kind(['Article'])){
 				the_excerpt(indieweb_publisher_continue_reading_text());
+			} else {
+				the_content();
 			};
 			?>
 
