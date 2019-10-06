@@ -29,6 +29,9 @@ nav.site-navigation:nth-child(2) {
 --------------------------------------------- */
 /* ## Content Widths and Positions
 --------------------------------------------- */
+.single .site-header-info {
+  display: block; }
+
 /* ## Avatars
 --------------------------------------------- */
 /* ## WordPress
