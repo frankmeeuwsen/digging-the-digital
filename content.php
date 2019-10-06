@@ -19,25 +19,23 @@
 			<?php if ( has_post_thumbnail() && in_array( get_post_format(), array( 'gallery', false ) ) ) : ?>
 				<a href="<?php the_permalink(); ?>" title="<?php echo indieweb_publisher_post_thumbnail_link_title(); ?>"><?php the_post_thumbnail( 'indieweb_publisher_post_thumbnail' ); ?></a>
 			<?php endif; ?>
-
+			<!-- Show ARTICLES as excerpt and the rest as full content.  -->
 			<?php $terms = get_the_terms( $post->ID, 'kind'); 
 
 				if ( $terms && ! is_wp_error( $terms ) ) : 
-			    $kind_links = array();
- 				foreach ( $terms as $term ) {
-        			$kind_links[] = $term->name;
-				}
-			    $myKind = join( ", ", $kind_links );
+			    	$kind_links = array();
+ 					foreach ( $terms as $term ) {
+        				$kind_links[] = $term->name;
+					}
+					$myKind = join( ", ", $kind_links );
+				endif;
 			?>
-			<?php endif; ?>
-
 
 			<?php 
-			if ( ( $myKind !== 'Note' ) ) {
-				the_excerpt(indieweb_publisher_continue_reading_text());
-			} else {
+			if ( ( $myKind !== 'Article' || $myKind == '') ) {
 				the_content();
-
+			} else {
+				the_excerpt(indieweb_publisher_continue_reading_text());
 			};
 			?>
 
