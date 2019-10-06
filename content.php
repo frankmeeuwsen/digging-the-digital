@@ -59,7 +59,6 @@
 			<?php endif; ?>
 
 	<footer class="entry-meta">
-				<?php print($myKind);?>
 		<?php
 		/*
 		 Show author name and post categories only when post type == post */
