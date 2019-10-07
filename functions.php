@@ -139,20 +139,29 @@ add_theme_support( 'post-thumbnails' );
 
 add_image_size( 'indieweb_publisher_post_frontpage', 200, 200 );
 
-// function indieweb_publisher_continue_reading_text($content) {
-// 	return $content = $content.'Continue reading <span class="meta-nav">&rarr;</span>';
-// }
 
-// function dtd_rssclub($content) {
-// 	global $wp_query;
-// 	$postid = $wp_query->post->ID;
-// 	if(is_feed() && has_category('kinds', $postid) ) {
-// 		$content = '<div>Dit is een geheim bericht voor iedereen. </div><br /><br />';
-// 		}
-// 	else {
-// 	$content = $content;	
-// 	}
-// 	return $content;
-// 	}
-// 	add_filter('the_excerpt_rss', 'dtd_rssclub');
-// 	add_filter('the_content_rss', 'dtd_rssclub');
+add_filter( 'the_content_feed', 'my_content_feed' );
+function my_content_feed( $content ) {
+	global $post;
+
+	if ( has_category( 'rss-club', $post->ID ) ) {
+		$content = $content.'<p>Dit is een geheim bericht voor iedereen. <a href="' . get_permalink( get_page_by_path( 'rss-club' ) ) . '">Lees alles over de RSS Club.</a></p>';
+	}
+
+	return $content;
+}
+
+add_filter( 'the_excerpt_rss', 'my_excerpt_rss' );
+function my_excerpt_rss( $content ) {
+	global $post;
+
+	if ( has_category( 'rss-club', $post->ID ) ) {
+		// Excerpts usually don't contain HTML. Leave out the link.
+		// $content = 'Dit bericht is alleen voor abonnees. ' . $content;
+
+		// However, you probably could get away with it, like so:
+		$content = '<p>' . $content . '</p><p>Dit is een geheim bericht voor iedereen. <a href="' . get_permalink( get_page_by_path( 'rss-club' ) ) . '">Lees alles over de RSS Club.</a></p>';
+	}
+
+	return $content;
+}
