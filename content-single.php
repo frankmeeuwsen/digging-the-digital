@@ -57,8 +57,8 @@
 			</h2>
 			<?php 
 			}
-				// $title = indieweb_publisher_get_the_title();
-				$title = get_the_title();
+				$title = indieweb_publisher_get_the_title();
+				// $title = get_the_title();
 			if ( ! empty( $title ) ) {
 				?>
 				<h1 class="entry-title p-name" itemprop="name"><?php echo $title; ?></h1>
