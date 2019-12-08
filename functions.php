@@ -99,6 +99,17 @@ function indieweb_publisher_posted_on_date() {
 	);
 }
 
+function indieweb_publisher_get_post_date() {
+	if ( ( comments_open() && ! indieweb_publisher_hide_comments()  ) ) {
+		$separator = ' <span class="sep"> ' . apply_filters( 'indieweb_publisher_entry_meta_separator', '|' ) . ' </span>';
+	} else {
+		$separator = '';
+	}
+
+	return indieweb_publisher_posted_on_date() . $separator;
+}
+
+
 // set the default feed to atom
 // add_filter('default_feed','atom_default_feed');
 // function atom_default_feed() { return 'atom'; }
@@ -116,6 +127,14 @@ function aperture_endpoint() {
   echo '<link rel="microsub" href="https://aperture.p3k.io/microsub/146">' . "\n";
 }
 add_action('wp_head', 'aperture_endpoint');
+
+
+// Small test
+// function dtd_testfunction(){
+// 	echo 'Here we are now';
+// }
+
+// add_action('indieweb_publisher_before_bottom_comment_button', 'dtd_testfunction');
 
 // Add newsletter subscription below blogposts
 
@@ -173,3 +192,7 @@ function my_excerpt_rss( $content ) {
 
 	return $content;
 }
+
+// remove_filter( 'the_content', array( 'Kind_View', 'content_response' ), 20 );
+// remove_filter( 'the_excerpt', array( 'Kind_View', 'excerpt_response' ), 20 );
+remove_filter( 'admin_post_thumbnail_html', 'indieweb_publisher_featured_image_meta' );
