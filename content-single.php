@@ -9,6 +9,7 @@
 		<?php the_post_thumbnail( 'indieweb_publisher_post_thumbnail', array( 'itemprop' => 'image' ) ); ?>
 	<?php endif; ?>
 	<header>
+
 		<?php if ( indieweb_publisher_post_has_post_cover_title() ) : ?>
 			<h2 class="entry-title-meta">
 	  <span class="entry-title-meta-author">
@@ -102,7 +103,10 @@
 			);
 			?>
 		<?php endif; ?>
+		
+
 		<?php do_action( 'indieweb_publisher_entry_meta_top' ); ?>
+		<?php indieweb_publisher_show_related_tags(); ?>
 
 		<?php if ( comments_open() && ! indieweb_publisher_hide_comments() ) : ?>
 			<div id="share-comment-button">
