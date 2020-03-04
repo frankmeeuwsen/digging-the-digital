@@ -176,4 +176,9 @@ nav.site-navigation:nth-child(2) {
 .kind-photo .entry-content img {
   max-width: 50%; }
 
+figcaption {
+  text-align: center;
+  font-size: .8em;
+  font-style: italic; }
+
 /*# sourceMappingURL=style.css.map */

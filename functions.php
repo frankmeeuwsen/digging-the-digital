@@ -196,3 +196,9 @@ function my_excerpt_rss( $content ) {
 // remove_filter( 'the_content', array( 'Kind_View', 'content_response' ), 20 );
 // remove_filter( 'the_excerpt', array( 'Kind_View', 'excerpt_response' ), 20 );
 remove_filter( 'admin_post_thumbnail_html', 'indieweb_publisher_featured_image_meta' );
+
+function indieweb_publisher_min_comments_comment_title() {
+	return 0;
+}
+
+// apply_filters( 'semantic_linkbacks_facepile', true );
