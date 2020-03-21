@@ -115,18 +115,18 @@ function indieweb_publisher_get_post_date() {
 // function atom_default_feed() { return 'atom'; }
 
 // remove the rdf and rss 0.92 feeds (nobody ever needs these)
-remove_action( 'do_feed_rdf', 'do_feed_rdf', 10, 1 );
-remove_action( 'do_feed_rss', 'do_feed_rss', 10, 1 );
+// remove_action( 'do_feed_rdf', 'do_feed_rdf', 10, 1 );
+// remove_action( 'do_feed_rss', 'do_feed_rss', 10, 1 );
 
 // point those feeds at rss 2 (it is backwards compatible with both of them)
-add_action( 'do_feed_rdf', 'do_feed_rss2', 10, 1 );
-add_action( 'do_feed_rss', 'do_feed_rss2', 10, 1 );
+// add_action( 'do_feed_rdf', 'do_feed_rss2', 10, 1 );
+// add_action( 'do_feed_rss', 'do_feed_rss2', 10, 1 );
 
 // Add Aperture microsub endpoint to the header so I can own my subscriptions...
-function aperture_endpoint() {
-  echo '<link rel="microsub" href="https://aperture.p3k.io/microsub/146">' . "\n";
-}
-add_action('wp_head', 'aperture_endpoint');
+// function aperture_endpoint() {
+//   echo '<link rel="microsub" href="https://aperture.p3k.io/microsub/146">' . "\n";
+// }
+// add_action('wp_head', 'aperture_endpoint');
 
 
 // Small test
