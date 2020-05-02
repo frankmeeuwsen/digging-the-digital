@@ -50,8 +50,9 @@ function indieweb_publisher_stylesheet() {
 		wp_get_theme()->get('Version'));
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
+        array( $parent_style )
+        // array( $parent_style ),
+        // wp_get_theme()->get('Version')
     );
 }
 
