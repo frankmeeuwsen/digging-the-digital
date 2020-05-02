@@ -17,6 +17,7 @@ get_header(); ?>
 				?>
 
 				<?php get_template_part( 'template-parts/content', 'single' ); ?>
+				<!-- <?php indieweb_publisher_show_related_tags(); ?> -->
 
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template
@@ -27,7 +28,6 @@ get_header(); ?>
 
 				<?php do_action( 'indieweb_publisher_before_post_bottom_tag_list' ); ?>
 
-				<?php indieweb_publisher_show_related_tags(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 

@@ -69,7 +69,7 @@
 	</header>
 	
 	<?php the_content(); ?>
-
+	<?php indieweb_publisher_show_related_tags(); ?>
 	<?php indieweb_publisher_posted_author_bottom_card(); ?>
 	<!-- .entry-content -->
 	<?php get_sidebar('postfooter'); ?>
@@ -102,7 +102,9 @@
 			);
 			?>
 		<?php endif; ?>
+
 		<?php do_action( 'indieweb_publisher_entry_meta_top' ); ?>
+
 
 		<?php if ( comments_open() && ! indieweb_publisher_hide_comments() ) : ?>
 			<div id="share-comment-button">
