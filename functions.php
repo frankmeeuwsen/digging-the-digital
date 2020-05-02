@@ -244,3 +244,9 @@ function custom_reorder_simple_icons( $icons ) {
 
 	return $new_icon_order;
 }
+
+function unspam_webmentions($approved, $commentdata) {
+	return $commentdata['comment_type'] == 'webmention' ? 1 : $approved;
+  }
+  
+add_filter('pre_comment_approved', 'unspam_webmentions', '99', 2);
