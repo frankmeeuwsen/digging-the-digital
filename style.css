@@ -112,6 +112,14 @@ nav.site-navigation:nth-child(2) {
 --------------------------------------------- */
 /* ## Widgets
 --------------------------------------------- */
+.simple-social-icons ul li {
+  background: 0 0 !important;
+  border: none !important;
+  float: left;
+  list-style-type: none !important;
+  margin: 0 1px 10px !important;
+  padding: 0 !important; }
+
 /* ## Site Footer
 --------------------------------------------- */
 /* ## Footer Widgets
@@ -152,6 +160,9 @@ nav.site-navigation:nth-child(2) {
 
 /* ## Footer Credits
 --------------------------------------------- */
+.widget_media_image {
+  text-align: center; }
+
 /* ## Front Page
 --------------------------------------------- */
 .dtd-date {
