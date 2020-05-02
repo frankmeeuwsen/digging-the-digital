@@ -202,4 +202,6 @@ function indieweb_publisher_min_comments_comment_title() {
 	return 0;
 }
 
+add_filter( 'simple_social_disable_custom_css', '__return_true' );
+
 // apply_filters( 'semantic_linkbacks_facepile', true );
