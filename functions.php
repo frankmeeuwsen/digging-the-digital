@@ -205,3 +205,42 @@ function indieweb_publisher_min_comments_comment_title() {
 add_filter( 'simple_social_disable_custom_css', '__return_true' );
 
 // apply_filters( 'semantic_linkbacks_facepile', true );
+
+
+add_filter( 'simple_social_default_profiles', 'custom_reorder_simple_icons' );
+
+function custom_reorder_simple_icons( $icons ) {
+
+	// Set your new order here
+	$new_icon_order = array(
+		'rss'         => '',
+		'linkedin'    => '',
+		'medium'      => '',
+		'twitter'     => '',
+		'github'      => '',
+		'instagram'   => '',
+		'email'       => '',
+		'phone'       => '',
+		'youtube'     => '',
+		// 'behance'     => '',
+		// 'bloglovin'   => '',
+		// 'dribbble'    => '',
+		// 'facebook'    => '',
+		// 'flickr'      => '',
+		// 'gplus'       => '',
+		// 'periscope'   => '',
+		// 'pinterest'   => '',
+		// 'snapchat'    => '',
+		// 'stumbleupon' => '',
+		// 'tumblr'      => '',
+		// 'vimeo'       => '',
+		// 'xing'        => '',
+	);
+
+
+	foreach( $new_icon_order as $icon => $icon_info ) {
+		$new_icon_order[ $icon ] = $icons[ $icon ];
+	}
+
+	return $new_icon_order;
+}
