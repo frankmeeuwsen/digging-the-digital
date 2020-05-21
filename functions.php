@@ -26,33 +26,13 @@ add_action('wp_head', 'blog_favicon');
  * last modified time of the file. This helps when making frequent changes to the
  * CSS file as the browser will always load the newest version.
  */ 
-function dtd_publisher_stylesheet() {
-	wp_enqueue_style( 'dtd-style', get_stylesheet_uri(), '', filemtime( get_stylesheet_directory() . '/style.css') );
-}
-
-
-/**
- * Custom template tags for this theme.
- */
-
-// function dtd_publisher_setup() {
-// 	require get_template_directory() . '/inc/template-tags.php';
-// }
-
-
 
 //  Loads the parent stylesheet from indieweb publisher and overrides the one in the parent theme
 add_action( 'wp_enqueue_scripts', 'indieweb_publisher_stylesheet' );
 function indieweb_publisher_stylesheet() {
 	$parent_style = 'parent-style'; 
-	wp_enqueue_style( $parent_style, 
-		get_template_directory_uri() . '/css/default.min.css',
-		wp_get_theme()->get('Version'));
-    wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-		array( $parent_style )
-		// ,wp_get_theme()->get('Version')
-    );
+	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/css/default.min.css');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ));
 }
 
 function ww_load_dashicons(){
